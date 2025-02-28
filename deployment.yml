@@ -1,0 +1,21 @@
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: my-python
+    labels:
+      app: my-python
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: my-python
+    template:
+      metadata:
+        labels:
+          app: my-python
+      spec:
+        containers:
+        - name: my-python-container
+          image: srajantemp/my-python:latest
+          ports:
+          - containerPort: 80

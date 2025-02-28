@@ -1,0 +1,7 @@
+docker tag my-java srajantemp/my-java
+docker push srajantemp/my-java
+minikube start
+kubectl apply -f deployment.yml
+minikube image load my-java
+kubectl get pods
+kubectl  logs -f my-java-8469f7d4-57pm7
